@@ -1,0 +1,10 @@
+<div class="blog--timeline">
+  <article *ngFor="let blog of blogs" class="blog--thumbnail">
+    <div class="blog-thumbnail--image row">
+      <img src="{{ blog.thumbnail }}" style="width:80%; height: 60%" class="rounded img-fluid">
+    </div>
+    <div class="blog-thumbnail--title row">
+      <h4><a href="/blog/{{ blog.id }}">{{ blog.title }}</a></h4>
+    </div>
+  </article>
+</div>
