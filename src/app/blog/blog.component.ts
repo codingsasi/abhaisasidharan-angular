@@ -12,7 +12,7 @@ import { environment } from '../../environments/environment';
 })
 export class BlogComponent implements OnInit {
   blogs: Blog[];
-  relationships: Relationship[];
+  relationship: Relationship;
 
   private API_URL = environment.apiUrl;
 
@@ -45,14 +45,13 @@ export class BlogComponent implements OnInit {
       blog.images = ['na'];
       data.push(blog);
     }
-    console.log(data);
     return data;
   }
 
-  getThumbnailUrl(field_thumbnail, blog): void {
+  getThumbnailUrl(field_thumbnail: string, blog: Blog): void {
     this.relationshipService.getThumbnailUrl(field_thumbnail)
-    .subscribe(realtionships => {
-      blog.thumbnail = this.API_URL + realtionships.data.attributes.uri.url;
+    .subscribe(realtionship => {
+      blog.thumbnail = this.API_URL + realtionship.data.attributes.uri.url;
     });
   }
 }

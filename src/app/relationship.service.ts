@@ -17,7 +17,7 @@ export class RelationshipService {
   
   constructor(private http: HttpClient) { }
 
-  getThumbnailUrl(field_thumbnail): Observable<Relationship> {
-    return this.http.get<Relationship>(field_thumbnail);
+  getThumbnailUrl(field_thumbnail: string): Observable<any> {
+    return this.http.get<any>(field_thumbnail);
   }
 }
