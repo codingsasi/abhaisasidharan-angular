@@ -7,11 +7,13 @@ import { CoreModule } from './core/core.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BlogComponent } from './blog/blog.component';
+import { ResumeComponent } from './resume/resume.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BlogComponent
+    BlogComponent,
+    ResumeComponent
   ],
   imports: [
     BrowserModule,
