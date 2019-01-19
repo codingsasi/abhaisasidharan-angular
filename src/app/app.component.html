@@ -1,13 +1,7 @@
 <header class="header">
   <app-header></app-header>
 </header>
-<div class="row py-5">
-  <aside [ngClass]="{'col-md-3': (url != '/resume'), 'col-md-1': (url == '/resume')}">
-  </aside>
-  <section style="min-height:50em" [ngClass]="{'col-md-9': (url != '/resume'), 'col-md-10': (url == '/resume')}">
-    <router-outlet></router-outlet>
-  </section>
-</div>
+  <router-outlet></router-outlet>
 <footer class="footer mt-3 pb-4 bg-light">
   <app-footer></app-footer>
 </footer>
