@@ -1,11 +1,3 @@
-article {
-    clear: both;
-}
-
-.blog--timeline {
-    padding: 2.5em 0em 2.5em 0em;
-}
-
 .blog--thumbnail {
     width: 70%;
     height: auto;
@@ -17,6 +9,6 @@ article {
     border: 1px #e2e2e2 solid;
 }
 
-.blog-thumbnail--title {
-    width: 84%;
+.blog-page {
+    margin: 0 5em;
 }
