@@ -8,7 +8,7 @@
             <img src="{{ blog.thumbnail }}" style="width:100%; height: 60%" class="rounded img-fluid">
           </div>
           <div class="blog-thumbnail--title row">
-            <h4><a href="/blog/{{ blog.id }}">{{ blog.title }}</a></h4>
+            <h4><a routerLink="/blog/{{ blog.id }}">{{ blog.title }}</a></h4>
             <p>{{ blog.summary }}</p>
           </div>
           <div class="blog-thumbnail--created row">
