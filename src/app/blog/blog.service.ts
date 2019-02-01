@@ -22,7 +22,7 @@ export class BlogService {
   constructor(private http: HttpClient) { }
 
   getBlogs(): Observable<BlogTeaser[]> {
-    return this.http.get<BlogTeaser[]>(this.API_URL + '/api/node/blog');
+    return this.http.get<BlogTeaser[]>(this.API_URL + '/api/node/blog?sort=-created');
   }
   
   getBlog(id: string): Observable<Blog> {
