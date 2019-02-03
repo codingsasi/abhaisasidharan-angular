@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 
-import { Blog, BlogTeaser } from './blog';
+import { Blog } from './blog';
 import { environment } from '../../environments/environment';
 
 const httpOptions = {
@@ -21,11 +21,14 @@ export class BlogService {
 
   constructor(private http: HttpClient) { }
 
-  getBlogs(): Observable<BlogTeaser[]> {
-    return this.http.get<BlogTeaser[]>(this.API_URL + '/api/node/blog?sort=-created');
+  getBlogs(id: string): Observable<Blog[]> {
+    console.log(id);
+    if (id) {
+      return this.http.get<Blog[]>(this.API_URL + '/api/node/blog/' + id);
+    }
+    else {
+      return this.http.get<Blog[]>(this.API_URL + '/api/node/blog?sort=-created');
+    }
   }
   
-  getBlog(id: string): Observable<Blog> {
-    return this.http.get<Blog>(this.API_URL + '/api/node/blog/' + id);
-  }
 }

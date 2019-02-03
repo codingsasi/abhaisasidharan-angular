@@ -1,0 +1,15 @@
+#portfolio-page {
+    margin: 0 5em;
+    img {
+        &.group {
+            &.list-group-image {
+                //transform: scale(0.5);
+            }
+        }
+    }
+    .carousel-indicators {
+        li {
+            background-color: #000000;
+        }
+    }
+}

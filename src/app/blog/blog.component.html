@@ -1,10 +1,10 @@
 <div class="row blog-page">
   <div *ngIf="id; then Blog else Blogs" class="blog"></div>
   <ng-template #Blogs>
-    <section style="min-height:50em" class="col-md-8">
+    <section style="min-height:50em" class="col-md-8 mt-2">
       <div class="blog--timeline">
         <article *ngFor="let blog of blogs">
-          <div class="blog-thumbnail--image row pt-5 pb-3">
+          <div class="blog-thumbnail--image row pt-5 pb-3 mt-2">
             <img src="{{ blog.thumbnail }}" style="width:100%; height: 60%" class="rounded img-fluid">
           </div>
           <div class="blog-thumbnail--title row">
@@ -26,25 +26,25 @@
   </ng-template>
 
   <ng-template #Blog>
-    <section style="min-height:50em" class="col-md-8">
+    <section style="min-height:50em" class="col-md-8 mt-2">
     <div class="blog--full">
-        <article>
-            <div class="blog-full--image row pt-5 pb-3">
-                <img src="{{ blog.thumbnail }}" style="width:100%; height: 60%" class="rounded img-fluid">
-            </div>
-            <div class="blog-full--title row pb-3">
-                <h4><a href="/blog/{{ blog.id }}">{{ blog.title }}</a></h4>
-            </div>
-            <div class="blog-full--created row pb-3">
-              <div>
-                <span><i class="fa fa-calendar"></i> {{ blog.created }} </span>
-                <br>
-              </div>
-            </div>
-            <div class="blog-full--body row py-3">
-                <div [innerHTML]="blog.body" style="width: 100%;"></div>
-            </div>
-        </article>
+      <article *ngFor="let blog of blogs">
+        <div class="blog-full--image row pt-5 pb-3">
+          <img src="{{ blog.thumbnail }}" style="width:100%; height: 60%" class="rounded img-fluid">
+        </div>
+        <div class="blog-full--title row pb-3">
+          <h4><a href="/blog/{{ blog.id }}">{{ blog.title }}</a></h4>
+        </div>
+        <div class="blog-full--created row pb-3">
+          <div>
+            <span><i class="fa fa-calendar"></i> {{ blog.created }} </span>
+            <br>
+          </div>
+        </div>
+        <div class="blog-full--body row py-3">
+          <div [innerHTML]="blog.body" style="width: 100%;"></div>
+        </div>
+      </article>
     </div>
     </section>
     <aside class="col-md-4">

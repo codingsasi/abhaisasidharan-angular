@@ -1,0 +1,29 @@
+<div class="container pt-3">
+  <h2 class="mb-3">Programmer <strong>Humour</strong></h2>
+  <div class="row">
+  	<div class="col-md-12">
+  		<blockquote class="lead">
+  			<h4 class="mb-0">Knowledge is Power</h4>
+          <small> -- France is Bacon</small>
+		  </blockquote>
+	  </div>
+  </div>
+  <hr>
+</div>
+<div class="row humour-page">
+  <section class="col-md-8">
+    <div id="humour" class="pt-5 mt-2">
+      <div *ngFor="let faq of faqs" class="card mb-3">
+        <div class="card-header">
+          {{ faq.title }}
+        </div>
+        <div class="card-body">
+          <p class="card-title" [innerHtml]="faq.body"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <aside class="col-md-4">
+    <app-sidebar></app-sidebar>
+  </aside>
+</div>

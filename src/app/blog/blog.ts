@@ -10,15 +10,3 @@ export class Blog {
 	thumbnail: string;
 	images: Array<string>;
 }
-
-export class BlogTeaser {
-	id: string;
-	nid: number;
-	title: string;
-	summary: string;
-	alias: string;
-	created: string;
-	changed: string;
-	thumbnail: string;
-	images: Array<string>;
-}

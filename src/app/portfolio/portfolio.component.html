@@ -1,0 +1,54 @@
+<div id="portfolio-page" class="row">
+  <div *ngIf="id; then Portfolio else Portfolios" class="portfolio"></div>
+  <ng-template #Portfolios>
+    <section style="min-height:50em" class="col-md-8 portfolio--list mt-2">
+      <div class="row pt-5 mt-2">
+        <div *ngFor="let portfolio of portfolios" class="item col-md-4 grid-group-item">
+          <div class="thumbnail">
+            <img class="group list-group-image" src="{{ portfolio.thumbnail }}" alt="{{ portfolio.title }}" style="width:100%; height: 40%">
+              <div class="caption">
+                <h5 class="group inner list-group-item-heading mt-2 mb-3"><a routerLink="/my-works-question-mark/{{ portfolio.id }}">{{ (portfolio.title.length>15)? (portfolio.title | slice:0:15)+'..':(portfolio.title) }}</a></h5>
+                  <div class="group inner list-group-item-text" [innerHTML]="portfolio.body">
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                      <p class="lead">{{ portfolio.created }}</p>
+                    </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <aside class="col-md-4">
+      <app-sidebar></app-sidebar>
+    </aside>
+  </ng-template>
+  <ng-template #Portfolio>
+    <section *ngFor="let portfolio of portfolios" style="min-height:50em" class="col-md-8 mt-2">
+      <div id="portfolio" class="carousel slide pt-5 pb-3" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li *ngFor="let image of portfolio.images; index as i" data-target="#portfolio" [attr.data-slide-to]="i" [class]="(i == 0) ? 'active' : ''"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div *ngFor="let image of portfolio.images; index as i" [class]="(i == 0) ? 'carousel-item active' : 'carousel-item'">
+            <img class="d-block w-100 rounded img-fluid" src="{{ image }}">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#portfolio" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#portfolio" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <div [innerHTML]="portfolio.body"></div>
+      <a *ngIf="portfolio.live_link" href="http://{{ portfolio.live_link }}" class="btn btn-primary" target="_blank">Go to Site</a>
+    </section>
+    <aside class="col-md-4">
+      <app-sidebar></app-sidebar>
+    </aside>
+  </ng-template>
+</div>

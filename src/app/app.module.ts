@@ -8,12 +8,16 @@ import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { BlogComponent } from './blog/blog.component';
 import { ResumeComponent } from './resume/resume.component';
+import { HumourComponent } from './humour/humour.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BlogComponent,
-    ResumeComponent
+    ResumeComponent,
+    HumourComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,

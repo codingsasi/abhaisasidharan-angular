@@ -20,4 +20,8 @@ export class RelationshipService {
   getThumbnailUrl(field_thumbnail: string): Observable<any> {
     return this.http.get<any>(field_thumbnail);
   }
+
+  getImageUrls(field_image: string): Observable<any> {
+    return this.http.get<any>(field_image);
+  }
 }
