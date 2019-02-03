@@ -1,7 +1,7 @@
 <div class="row blog-page">
   <div *ngIf="id; then Blog else Blogs" class="blog"></div>
   <ng-template #Blogs>
-    <section style="min-height:50em" class="col-md-8 mt-2">
+    <section style="min-height:50em" class="col-md-8">
       <div class="blog--timeline">
         <article *ngFor="let blog of blogs">
           <div class="blog-thumbnail--image row pt-5 pb-3 mt-2">
