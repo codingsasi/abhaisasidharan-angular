@@ -10,7 +10,7 @@
 :root{
     --main-width: 6.4in;
     --sidebar-width: calc(var(--page-width) - var(--main-width));
-    --decorator-horizontal-margin: 0.2in;
+    --decorator-horizontal-margin: 0.15in;
   
     --sidebar-horizontal-padding: 0.2in;
   
@@ -28,7 +28,7 @@
 }
 
 #resume {
-    margin-left: 8rem; 
+    margin-left: 4rem; 
     body{
         width: var(--page-width);
         height: var(--page-height);
@@ -285,17 +285,13 @@
     /***** fine-tunes on the lists... *****/
       
     #main {
-        ul {
-            padding-left: 0.07in;
-            margin: 0.08in 0;
-        }
       
        li {
             margin: 0 0 0.025in 0;
             &::before{
                 position: relative;
                 margin-left: -4.25pt;
-                content: 'â€¢ ';
+                content: ' ';
             }
        }
     }

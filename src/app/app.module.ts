@@ -10,6 +10,7 @@ import { BlogComponent } from './blog/blog.component';
 import { ResumeComponent } from './resume/resume.component';
 import { HumourComponent } from './humour/humour.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { NoSanitizePipe } from './no-sanitize.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     BlogComponent,
     ResumeComponent,
     HumourComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    NoSanitizePipe
   ],
   imports: [
     BrowserModule,
